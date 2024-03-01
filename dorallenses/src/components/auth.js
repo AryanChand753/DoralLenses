@@ -27,7 +27,7 @@ export const Auth = () => {
         try {
             await signOut(auth);
         } catch (err) {
-            console.error(err);
+            console.error(err); 
         }
     }
 
