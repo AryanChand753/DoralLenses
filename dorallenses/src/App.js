@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import { Auth } from './components/auth';
-import { db, auth } from './config/firebase';
+import { db, auth, storage } from './config/firebase';
 import { getDocs, collection, addDoc, deleteDoc, doc } from 'firebase/firestore';
+import { ref, uploadBytes } from 'firebase/storage';
 
 function App() {
 
@@ -15,6 +16,8 @@ function App() {
   const [newArticleAuthor, setNewArticleAuthor] = useState("");
   const [newArticleActive, setNewArticleActive] = useState(false);
 
+  // New Upload States
+  const [fileUpload, setFileUpload] = useState(null);
 
   const articleCollectionRef = collection(db, "articles");
 
@@ -56,6 +59,16 @@ function App() {
     await deleteDoc(article);
   }
 
+  const uploadFile = async () => {
+    if (!fileUpload) return;
+    const filesFolderRef = ref(storage, `Pictures/${fileUpload.name}`);
+    try {
+      await uploadBytes(filesFolderRef, fileUpload);
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
   return (
     <div className="App">
       <Auth />
@@ -82,6 +95,11 @@ function App() {
             <button onClick={() => deleteArticle(article.id)}>Delete Article</button>
           </div>
         ))}
+      </div>
+
+      <div>
+        <input type="file" onChange={(e) => setFileUpload(e.target.files[0])} />
+        <button type="submit" onClick={uploadFile}>Upload File</button>
       </div>
     </div>
   );
