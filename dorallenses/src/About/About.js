@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Footer from '../components/Footer';
+import Hero2 from '../components/Hero2';
 import './About.css'
 
 export default function About() {
