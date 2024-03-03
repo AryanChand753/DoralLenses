@@ -2,6 +2,8 @@ import { auth, googleProvider } from "../config/firebase";
 import { createUserWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
 import { useState } from 'react';
 
+import "../styles/AuthStyles.css";
+
 export const Auth = () => {
 
     const [email, setEmail] = useState("");
@@ -32,14 +34,17 @@ export const Auth = () => {
     }
 
     return (
-        <div>
-            <input placeholder="Email..." type="email" onChange={(e) => setEmail(e.target.value)} />
-            <input placeholder="Password..." type="password" onChange={(e) => setPassword(e.target.value)}/>
-            <button onClick={signIn}>Sign In</button>
+        <div className="Login">
+            <div className="input-wrapper wrapper">
+                <input placeholder="Email..." type="email" onChange={(e) => setEmail(e.target.value)} />
+                <input placeholder="Password..." type="password" onChange={(e) => setPassword(e.target.value)}/>
+            </div>
 
-            <button onClick={signInWithGoogle}>Sign in with Google</button>
-
-            <button onClick={logout}>Logout</button>
+            <div className="login-actions wrapper">
+                <button onClick={signIn}>Sign In</button>
+                <button onClick={signInWithGoogle}>Sign in with Google</button>
+                <button onClick={logout}>Logout</button>
+            </div>
         </div>
     );
 }

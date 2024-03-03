@@ -1,0 +1,78 @@
+/* Imports */
+
+
+/* Universal Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+* > ::-webkit-scrollbar { display: none; }
+.container {
+    width: 92%;
+    margin: auto;
+    height: 100%;
+}
+
+/* Navbar Styles */
+.Navbar {
+    display: flex;
+    height: 80px;
+    background-color: blueviolet;
+    width: 100%;   
+}
+.Navbar > .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.Navbar > .container > .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.Navbar > .container > .links {
+    display: flex;
+    align-items: center;
+}
+.Navbar > .container > .links > a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 20px;
+    align-items: center;
+}
+.dropdown {
+    position: relative;
+    margin-right: 20px;
+    align-items: center;
+}
+.dropdown > .dropbtn {
+    background-color: transparent;
+    font-size: 20px;
+    align-items: center;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.dropdown > .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: blueviolet;
+    min-width: 160px;
+    z-index: 1;
+    & > a {
+        color: white;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.login-container {
+    display: flex;
+    /* border: red 1px solid; */
+    height: 100%;
+    align-items: center;
+}

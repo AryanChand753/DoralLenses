@@ -1,0 +1,34 @@
+/* Imports */
+
+
+/* Universal Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+* > ::-webkit-scrollbar { display: none; }
+
+.Login {
+    display: flex;
+    gap: 20px;
+    height: 100%;
+}
+.Login > .wrapper {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.Login > .input-wrapper > input {
+    border: 2px solid transparent;
+    border-radius: 5px;
+    height: 22px;
+    padding: 2px;
+}
+.Login > .login-actions > button {
+    background-color: white;
+    border: transparent;
+    padding: 3px;
+    border-radius: 3px;
+}
