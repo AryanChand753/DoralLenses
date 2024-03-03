@@ -18,6 +18,8 @@
 .Navbar {
     display: flex;
     height: 80px;
+    position: fixed;
+    top: 0;
     background-color: blueviolet;
     width: 100%;   
 }
