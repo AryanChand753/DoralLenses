@@ -1,0 +1,91 @@
+.FooterContainer {
+    color: black;
+    background: #2a2a2a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+
+}
+
+@media screen and (max-width: 1100px) {}
+
+.FooterWrapper {
+    height: 280px;
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.FooterIconBar {
+    display: grid;
+    grid-auto-columns: 90px;
+    align-items: center;
+    justify-content: center;
+    grid-template-areas: 'Instagram Twitter Youtube Twitch';
+}
+
+.Instagram {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    grid-area: 'Instagram';
+}
+
+.Twitter {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    grid-area: 'Twitter';
+}
+
+.Youtube {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    grid-area: 'Youtube';
+}
+
+.Twitch {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    grid-area: 'Twitch';
+}
+
+.IconText {
+    color: white;
+    transition: 0.2s ease-in-out;
+}
+
+.IconText:hover {
+    color: #4484b4;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.ButtonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.HelpOut {
+    color: white;
+    font-family: "Josefin Sans";
+    font-size: 48px;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+@media screen and (max-width: 768px) {
+    .HelpOut {
+        font-size: 36px;
+    }
+}
